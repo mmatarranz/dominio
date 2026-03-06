@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatarranzDev.es | Digital Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucide.min.js"></script>
+    <style>
+        :root {
+            --navy: #1a2d51;
+            --yellow: #f2d116;
+            --blue-es: #4a7298;
+            --accent-glow: rgba(242, 209, 22, 0.12);
+        }
+
+        body {
+            background-color: #030305;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            letter-spacing: -0.01em;
+        }
+
+        h1,
+        h2,
+        h3,
+        .nav-logo {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Fondo con gradiente profundo */
+        .bg-gradient-mesh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 15% 15%, rgba(26, 45, 81, 0.35) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(242, 209, 22, 0.04) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        .text-yellow-brand {
+            color: var(--yellow);
+        }
+
+        .text-blue-es {
+            color: var(--blue-es);
+        }
+
+        /* Animación de gradiente en texto */
+        .reveal-text {
+            background: linear-gradient(135deg, #ffffff 30%, #4a7298 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s ease-in-out infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+            filter: blur(100px);
+            border-radius: 50%;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            border-color: var(--yellow);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px -20px var(--accent-glow);
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.35;
+        }
+
+        .cursor-glow {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(242, 209, 22, 0.06) 0%, transparent 75%);
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease-out;
+        }
+
+        .logo-icon {
+            filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.2));
+            transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .logo-icon:hover {
+            transform: rotate(5deg) scale(1.1);
+        }
+
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            background: #ffffff;
+            color: #000;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--yellow);
+            box-shadow: 0 0 30px rgba(242, 209, 22, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-gradient-mesh"></div>
+    <div id="cursor" class="cursor-glow"></div>
+    <canvas id="particles"></canvas>
+
+    <!-- Navegación -->
+    <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-10 py-10 mix-blend-difference">
+        <div class="nav-logo text-xl font-bold tracking-tight flex items-center gap-2">
+            <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+            <span>MATARRANZ</span><span class="text-yellow-brand">DEV</span>
+        </div>
+        <div
+            class="flex gap-10 text-[10px] mono uppercase tracking-[0.2em] font-semibold opacity-50 hover:opacity-100 transition-all">
+            <a href="#" class="hover:text-yellow-400">Trabajos</a>
+            <a href="#" class="hover:text-yellow-400">Sobre mí</a>
+            <a href="#" class="hover:text-yellow-400">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4">
+        <div class="hero-glow"></div>
+
+        <div class="flex flex-col items-center">
+            <!-- Icono SVG Minimalista -->
+            <svg class="logo-icon w-16 h-16 mb-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 30L10 40L20 50" stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+                <path d="M80 30L90 40L80 50" stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+                <path d="M20 60L10 70L20 80" stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+                <path d="M80 60L90 70L80 80" stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+                <path d="M40 40L50 50L60 40" stroke="var(--yellow)" stroke-width="6" stroke-linecap="round" />
+                <path d="M40 70H60" stroke="#ffffff" stroke-width="4" stroke-linecap="round" />
+                <path d="M60 30L40 60" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round" />
+            </svg>
+
+            <div class="text-center">
+                <div class="mono text-yellow-brand text-[10px] mb-4 tracking-[0.4em] uppercase font-bold">
+                    [ Engineering the web since 2024 ]
+                </div>
+
+                <h1
+                    class="text-5xl md:text-8xl font-black tracking-tight leading-tight flex flex-col md:flex-row items-center justify-center md:gap-4">
+                    <span class="reveal-text">Matarranz</span>
+                    <div class="flex items-baseline gap-1">
+                        <span class="text-yellow-brand">Dev</span>
+                        <span class="text-3xl md:text-5xl font-bold text-blue-es tracking-tighter">.es</span>
+                    </div>
+                </h1>
+
+                <p
+                    class="max-w-lg mx-auto mt-10 text-gray-400 text-base md:text-lg font-light leading-relaxed opacity-80">
+                    Desarrollo de software con un enfoque en la elegancia técnica y el rendimiento. Creamos herramientas
+                    digitales para la nueva era.
+                </p>
+
+                <div class="mt-12 flex flex-wrap justify-center gap-6">
+                    <button class="btn-primary px-10 py-4 font-bold text-xs uppercase tracking-widest rounded-lg">
+                        Iniciar Proyecto
+                    </button>
+                    <button class="glass-card px-10 py-4 font-bold text-xs uppercase tracking-widest rounded-lg">
+                        Portafolio
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer de Estadísticas -->
+        <div
+            class="absolute bottom-10 w-full max-w-7xl px-10 flex flex-col md:flex-row justify-between items-end gap-10">
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center gap-6 opacity-30 text-[9px] mono uppercase tracking-widest font-bold">
+                    <div class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span>
+                        Nodos Activos
+                    </div>
+                    <div>Latencia: 14ms</div>
+                    <div>Ver: 2.6.0</div>
+                </div>
+            </div>
+
+            <div class="flex gap-8 items-center">
+                <div class="h-[1px] w-12 bg-white/10 hidden md:block"></div>
+                <div class="flex gap-6 opacity-40 hover:opacity-100 transition-all">
+                    <i data-lucide="github" class="w-4 h-4 cursor-pointer hover:text-yellow-400"></i>
+                    <i data-lucide="linkedin" class="w-4 h-4 cursor-pointer hover:text-yellow-400"></i>
+                    <i data-lucide="twitter" class="w-4 h-4 cursor-pointer hover:text-yellow-400"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        window.addEventListener('load', function () {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            const cursor = document.getElementById('cursor');
+            let mouseX = 0, mouseY = 0;
+            let cursorX = 0, cursorY = 0;
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            function updateCursor() {
+                let dx = mouseX - cursorX;
+                let dy = mouseY - cursorY;
+                cursorX += dx * 0.1;
+                cursorY += dy * 0.1;
+                if (cursor) {
+                    cursor.style.left = cursorX + 'px';
+                    cursor.style.top = cursorY + 'px';
+                }
+                requestAnimationFrame(updateCursor);
+            }
+            updateCursor();
+
+            const canvas = document.getElementById('particles');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                let particles = [];
+
+                function initCanvas() {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                }
+                initCanvas();
+                window.addEventListener('resize', initCanvas);
+
+                class Dot {
+                    constructor() {
+                        this.x = Math.random() * canvas.width;
+                        this.y = Math.random() * canvas.height;
+                        this.vx = (Math.random() - 0.5) * 0.2;
+                        this.vy = (Math.random() - 0.5) * 0.2;
+                    }
+                    update() {
+                        this.x += this.vx;
+                        this.y += this.vy;
+                        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                    }
+                }
+
+                for (let i = 0; i < 50; i++) particles.push(new Dot());
+
+                function render() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.fillStyle = "rgba(255,255,255,0.1)";
+
+                    particles.forEach((p, i) => {
+                        p.update();
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, 0.8, 0, Math.PI * 2);
+                        ctx.fill();
+
+                        for (let j = i + 1; j < particles.length; j++) {
+                            const d = Math.hypot(p.x - particles[j].x, p.y - particles[j].y);
+                            if (d < 140) {
+                                ctx.strokeStyle = `rgba(242, 209, 22, ${0.08 * (1 - d / 140)})`;
+                                ctx.lineWidth = 0.5;
+                                ctx.beginPath();
+                                ctx.moveTo(p.x, p.y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.stroke();
+                            }
+                        }
+                    });
+                    requestAnimationFrame(render);
+                }
+                render();
+            }
+        });
+    </script>
+</body>
+
+</html>
