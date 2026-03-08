@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | MatarranzDev.es</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800;900&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.0/lucide.min.js"></script>
+    <style>
+        :root {
+            --navy: #1a2d51;
+            --yellow: #f2d116;
+            --blue-es: #4a7298;
+            --accent-glow: rgba(242, 209, 22, 0.12);
+        }
+
+        body {
+            background-color: #030305;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            letter-spacing: -0.01em;
+        }
+
+        h1,
+        h2,
+        h3,
+        .nav-logo {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .bg-gradient-mesh {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 15% 15%, rgba(26, 45, 81, 0.35) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(242, 209, 22, 0.04) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        .text-yellow-brand {
+            color: var(--yellow);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            border-color: var(--yellow);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -20px var(--accent-glow);
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.35;
+        }
+
+        .cursor-glow {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(242, 209, 22, 0.06) 0%, transparent 75%);
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease-out;
+        }
+
+        .reveal-text {
+            background: linear-gradient(135deg, #ffffff 30%, #4a7298 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-gradient-mesh"></div>
+    <div id="cursor" class="cursor-glow"></div>
+    <canvas id="particles"></canvas>
+
+    <!-- Navegación -->
+    <nav
+        class="fixed top-0 w-full z-50 flex flex-col md:flex-row justify-between items-center px-6 py-6 md:px-10 md:py-10 mix-blend-difference gap-4 md:gap-0">
+        <a href="index.html" class="nav-logo text-xl font-bold tracking-tight flex items-center gap-2">
+            <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+            <span>MATARRANZ</span><span class="text-yellow-brand">DEV</span>
+        </a>
+        <div
+            class="flex gap-6 md:gap-10 text-[9px] md:text-[10px] mono uppercase tracking-[0.2em] font-semibold opacity-50 hover:opacity-100 transition-all">
+            <a href="index.html" class="hover:text-yellow-400">Inicio</a>
+            <a href="#" class="hover:text-yellow-400">Trabajos</a>
+            <a href="mailto:info@matarranzdev.es" class="hover:text-yellow-400">Contacto</a>
+        </div>
+    </nav>
+
+    <main class="relative z-10 min-h-screen pt-32 pb-20 px-6 md:px-10 max-w-7xl mx-auto">
+        <header class="mb-16">
+            <div class="mono text-yellow-brand text-[10px] mb-4 tracking-[0.4em] uppercase font-bold">
+                [ Portafolio de Proyectos ]
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black tracking-tight reveal-text">Experiencias Digitales</h1>
+            <p class="mt-6 text-gray-400 font-light max-w-2xl">
+                Una selección de plataformas web diseñadas y desarrolladas con un enfoque en la funcionalidad,
+                la estética y la optimización de resultados.
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Proyecto 1 -->
+            <a href="https://arquitectoensegovia.com/" target="_blank" class="glass-card p-8 rounded-2xl group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                        <i data-lucide="layout" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Arquitecto en Segovia</h3>
+                <p class="text-sm text-gray-500 font-light leading-relaxed">arquitectoensegovia.com</p>
+            </a>
+
+            <!-- Proyecto 2 -->
+            <a href="https://centroculturaldelosejercitos.com/" target="_blank"
+                class="glass-card p-8 rounded-2xl group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                        <i data-lucide="landmark" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Centro Cultural Ejércitos</h3>
+                <p class="text-sm text-gray-500 font-light leading-relaxed">centroculturaldelosejercitos.com</p>
+            </a>
+
+            <!-- Proyecto 3 -->
+            <a href="https://www.lastrasdecuellar.net/" target="_blank" class="glass-card p-8 rounded-2xl group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                        <i data-lucide="map" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Lastras de Cuellar</h3>
+                <p class="text-sm text-gray-500 font-light leading-relaxed">lastrasdecuellar.net</p>
+            </a>
+
+            <!-- Proyecto 4 -->
+            <a href="https://lastrasvive.com/" target="_blank" class="glass-card p-8 rounded-2xl group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                        <i data-lucide="users" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Lastras Vive</h3>
+                <p class="text-sm text-gray-500 font-light leading-relaxed">lastrasvive.com</p>
+            </a>
+
+            <!-- Proyecto 5 -->
+            <a href="https://campingelcalonge.es/" target="_blank" class="glass-card p-8 rounded-2xl group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                        <i data-lucide="tent" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Camping El Calonge</h3>
+                <p class="text-sm text-gray-500 font-light leading-relaxed">campingelcalonge.es</p>
+            </a>
+
+            <!-- Proyecto 6 -->
+            <a href="https://mundoazulmedioambiente.es/" target="_blank" class="glass-card p-8 rounded-2xl group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                        <i data-lucide="leaf" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Mundo Azul</h3>
+                <p class="text-sm text-gray-500 font-light leading-relaxed">mundoazulmedioambiente.es</p>
+            </a>
+
+            <!-- Proyecto 7 -->
+            <a href="https://www.triplenuevesports.com/" target="_blank" class="glass-card p-8 rounded-2xl group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                        <i data-lucide="trophy" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Triple Nueve Sports</h3>
+                <p class="text-sm text-gray-500 font-light leading-relaxed">triplenuevesports.com</p>
+            </a>
+
+            <!-- Proyecto 8 -->
+            <a href="https://el24cafebar.es/" target="_blank" class="glass-card p-8 rounded-2xl group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                        <i data-lucide="coffee" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">El 24 Café Bar</h3>
+                <p class="text-sm text-gray-500 font-light leading-relaxed">el24cafebar.es</p>
+            </a>
+
+            <!-- Proyecto 9 -->
+            <a href="https://www.eurosalmon.es/" target="_blank" class="glass-card p-8 rounded-2xl group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                        <i data-lucide="shopping-cart" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Eurosalmón</h3>
+                <p class="text-sm text-gray-500 font-light leading-relaxed">eurosalmon.es</p>
+            </a>
+
+            <!-- Proyecto 10 -->
+            <a href="https://metalurgicasherrero.es/" target="_blank" class="glass-card p-8 rounded-2xl group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                        <i data-lucide="factory" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Metalúrgicas Herrero</h3>
+                <p class="text-sm text-gray-500 font-light leading-relaxed">metalurgicasherrero.es</p>
+            </a>
+
+            <!-- Proyecto 11 -->
+            <a href="https://teosanz.com/" target="_blank" class="glass-card p-8 rounded-2xl group">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                        <i data-lucide="briefcase" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+                    </div>
+                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Teo Sanz</h3>
+                <p class="text-sm text-gray-500 font-light leading-relaxed">teosanz.com</p>
+            </a>
+        </div>
+    </main>
+
+    <script>
+        window.addEventListener('load', function () {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            const cursor = document.getElementById('cursor');
+            let mouseX = 0, mouseY = 0;
+            let cursorX = 0, cursorY = 0;
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            function updateCursor() {
+                let dx = mouseX - cursorX;
+                let dy = mouseY - cursorY;
+                cursorX += dx * 0.1;
+                cursorY += dy * 0.1;
+                if (cursor) {
+                    cursor.style.left = cursorX + 'px';
+                    cursor.style.top = cursorY + 'px';
+                }
+                requestAnimationFrame(updateCursor);
+            }
+            updateCursor();
+
+            const canvas = document.getElementById('particles');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                let particles = [];
+
+                function initCanvas() {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                }
+                initCanvas();
+                window.addEventListener('resize', initCanvas);
+
+                class Dot {
+                    constructor() {
+                        this.x = Math.random() * canvas.width;
+                        this.y = Math.random() * canvas.height;
+                        this.vx = (Math.random() - 0.5) * 0.2;
+                        this.vy = (Math.random() - 0.5) * 0.2;
+                    }
+                    update() {
+                        this.x += this.vx;
+                        this.y += this.vy;
+                        if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                        if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                    }
+                }
+
+                for (let i = 0; i < 50; i++) particles.push(new Dot());
+
+                function render() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.fillStyle = "rgba(255,255,255,0.1)";
+
+                    particles.forEach((p, i) => {
+                        p.update();
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, 0.8, 0, Math.PI * 2);
+                        ctx.fill();
+
+                        for (let j = i + 1; j < particles.length; j++) {
+                            const d = Math.hypot(p.x - particles[j].x, p.y - particles[j].y);
+                            if (d < 140) {
+                                ctx.strokeStyle = `rgba(242, 209, 22, ${0.08 * (1 - d / 140)})`;
+                                ctx.lineWidth = 0.5;
+                                ctx.beginPath();
+                                ctx.moveTo(p.x, p.y);
+                                ctx.lineTo(particles[j].x, particles[j].y);
+                                ctx.stroke();
+                            }
+                        }
+                    });
+                    requestAnimationFrame(render);
+                }
+                render();
+            }
+        });
+    </script>
+</body>
+
+</html>
