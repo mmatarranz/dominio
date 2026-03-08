@@ -160,21 +160,22 @@
     <canvas id="particles"></canvas>
 
     <!-- Navegación -->
-    <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-10 py-10 mix-blend-difference">
+    <nav
+        class="fixed top-0 w-full z-50 flex flex-col md:flex-row justify-between items-center px-6 py-6 md:px-10 md:py-10 mix-blend-difference gap-4 md:gap-0">
         <div class="nav-logo text-xl font-bold tracking-tight flex items-center gap-2">
             <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
             <span>MATARRANZ</span><span class="text-yellow-brand">DEV</span>
         </div>
         <div
-            class="flex gap-10 text-[10px] mono uppercase tracking-[0.2em] font-semibold opacity-50 hover:opacity-100 transition-all">
+            class="flex gap-6 md:gap-10 text-[9px] md:text-[10px] mono uppercase tracking-[0.2em] font-semibold opacity-50 hover:opacity-100 transition-all">
             <a href="#" class="hover:text-yellow-400">Trabajos</a>
             <a href="#" class="hover:text-yellow-400">Sobre mí</a>
-            <a href="#" class="hover:text-yellow-400">Contacto</a>
+            <a href="mailto:info@matarranzdev.es" class="hover:text-yellow-400">Contacto</a>
         </div>
     </nav>
 
     <!-- Contenido Principal -->
-    <main class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4">
+    <main class="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 pt-24 md:pt-0">
         <div class="hero-glow"></div>
 
         <div class="flex flex-col items-center">
@@ -210,9 +211,10 @@
                 </p>
 
                 <div class="mt-12 flex flex-wrap justify-center gap-6">
-                    <button class="btn-primary px-10 py-4 font-bold text-xs uppercase tracking-widest rounded-lg">
+                    <a href="mailto:info@matarranzdev.es"
+                        class="btn-primary px-10 py-4 font-bold text-xs uppercase tracking-widest rounded-lg flex items-center justify-center">
                         Iniciar Proyecto
-                    </button>
+                    </a>
                     <button class="glass-card px-10 py-4 font-bold text-xs uppercase tracking-widest rounded-lg">
                         Portafolio
                     </button>
