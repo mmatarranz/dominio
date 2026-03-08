@@ -56,6 +56,7 @@
         .glass-card {
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.06);
             transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -91,6 +92,7 @@
         .reveal-text {
             background: linear-gradient(135deg, #ffffff 30%, #4a7298 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
     </style>
@@ -128,138 +130,259 @@
             </p>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Proyecto 1 -->
-            <a href="https://arquitectoensegovia.com/" target="_blank" class="glass-card p-8 rounded-2xl group">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
-                        <i data-lucide="layout" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+            <a href="https://arquitectoensegovia.com/" target="_blank" rel="noopener"
+                class="glass-card rounded-2xl group overflow-hidden flex flex-col">
+                <div class="relative h-48 overflow-hidden bg-white/5">
+                    <img src="https://api.microlink.io?url=https://arquitectoensegovia.com/&screenshot=true&embed=screenshot.url"
+                        alt="Arquitecto en Segovia"
+                        class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#030305] via-transparent to-transparent opacity-80">
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Arquitecto en Segovia</h3>
-                <p class="text-sm text-gray-500 font-light leading-relaxed">arquitectoensegovia.com</p>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                            <i data-lucide="layout" class="w-5 h-5 text-gray-400 group-hover:text-yellow-400"></i>
+                        </div>
+                        <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Arquitecto en Segovia</h3>
+                    <p class="text-xs text-gray-500 font-mono tracking-wider">arquitectoensegovia.com</p>
+                </div>
             </a>
 
             <!-- Proyecto 2 -->
-            <a href="https://centroculturaldelosejercitos.com/" target="_blank"
-                class="glass-card p-8 rounded-2xl group">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
-                        <i data-lucide="landmark" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+            <a href="https://centroculturaldelosejercitos.com/" target="_blank" rel="noopener"
+                class="glass-card rounded-2xl group overflow-hidden flex flex-col">
+                <div class="relative h-48 overflow-hidden bg-white/5">
+                    <img src="https://api.microlink.io?url=https://centroculturaldelosejercitos.com/&screenshot=true&embed=screenshot.url"
+                        alt="Centro Cultural Ejércitos"
+                        class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#030305] via-transparent to-transparent opacity-80">
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Centro Cultural Ejércitos</h3>
-                <p class="text-sm text-gray-500 font-light leading-relaxed">centroculturaldelosejercitos.com</p>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                            <i data-lucide="landmark" class="w-5 h-5 text-gray-400 group-hover:text-yellow-400"></i>
+                        </div>
+                        <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Centro Cultural Ejércitos</h3>
+                    <p class="text-xs text-gray-500 font-mono tracking-wider">centroculturaldelosejercitos.com</p>
+                </div>
             </a>
 
             <!-- Proyecto 3 -->
-            <a href="https://www.lastrasdecuellar.net/" target="_blank" class="glass-card p-8 rounded-2xl group">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
-                        <i data-lucide="map" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+            <a href="https://www.lastrasdecuellar.net/" target="_blank" rel="noopener"
+                class="glass-card rounded-2xl group overflow-hidden flex flex-col">
+                <div class="relative h-48 overflow-hidden bg-white/5">
+                    <img src="https://api.microlink.io?url=https://www.lastrasdecuellar.net/&screenshot=true&embed=screenshot.url"
+                        alt="Lastras de Cuellar"
+                        class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#030305] via-transparent to-transparent opacity-80">
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Lastras de Cuellar</h3>
-                <p class="text-sm text-gray-500 font-light leading-relaxed">lastrasdecuellar.net</p>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                            <i data-lucide="map" class="w-5 h-5 text-gray-400 group-hover:text-yellow-400"></i>
+                        </div>
+                        <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Lastras de Cuellar</h3>
+                    <p class="text-xs text-gray-500 font-mono tracking-wider">lastrasdecuellar.net</p>
+                </div>
             </a>
 
             <!-- Proyecto 4 -->
-            <a href="https://lastrasvive.com/" target="_blank" class="glass-card p-8 rounded-2xl group">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
-                        <i data-lucide="users" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+            <a href="https://lastrasvive.com/" target="_blank" rel="noopener"
+                class="glass-card rounded-2xl group overflow-hidden flex flex-col">
+                <div class="relative h-48 overflow-hidden bg-white/5">
+                    <img src="https://api.microlink.io?url=https://lastrasvive.com/&screenshot=true&embed=screenshot.url"
+                        alt="Lastras Vive"
+                        class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#030305] via-transparent to-transparent opacity-80">
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Lastras Vive</h3>
-                <p class="text-sm text-gray-500 font-light leading-relaxed">lastrasvive.com</p>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                            <i data-lucide="users" class="w-5 h-5 text-gray-400 group-hover:text-yellow-400"></i>
+                        </div>
+                        <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Lastras Vive</h3>
+                    <p class="text-xs text-gray-500 font-mono tracking-wider">lastrasvive.com</p>
+                </div>
             </a>
 
             <!-- Proyecto 5 -->
-            <a href="https://campingelcalonge.es/" target="_blank" class="glass-card p-8 rounded-2xl group">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
-                        <i data-lucide="tent" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+            <a href="https://campingelcalonge.es/" target="_blank" rel="noopener"
+                class="glass-card rounded-2xl group overflow-hidden flex flex-col">
+                <div class="relative h-48 overflow-hidden bg-white/5">
+                    <img src="https://api.microlink.io?url=https://campingelcalonge.es/&screenshot=true&embed=screenshot.url"
+                        alt="Camping El Calonge"
+                        class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#030305] via-transparent to-transparent opacity-80">
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Camping El Calonge</h3>
-                <p class="text-sm text-gray-500 font-light leading-relaxed">campingelcalonge.es</p>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                            <i data-lucide="tent" class="w-5 h-5 text-gray-400 group-hover:text-yellow-400"></i>
+                        </div>
+                        <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Camping El Calonge</h3>
+                    <p class="text-xs text-gray-500 font-mono tracking-wider">campingelcalonge.es</p>
+                </div>
             </a>
 
             <!-- Proyecto 6 -->
-            <a href="https://mundoazulmedioambiente.es/" target="_blank" class="glass-card p-8 rounded-2xl group">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
-                        <i data-lucide="leaf" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+            <a href="https://mundoazulmedioambiente.es/" target="_blank" rel="noopener"
+                class="glass-card rounded-2xl group overflow-hidden flex flex-col">
+                <div class="relative h-48 overflow-hidden bg-white/5">
+                    <img src="https://api.microlink.io?url=https://mundoazulmedioambiente.es/&screenshot=true&embed=screenshot.url"
+                        alt="Mundo Azul"
+                        class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#030305] via-transparent to-transparent opacity-80">
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Mundo Azul</h3>
-                <p class="text-sm text-gray-500 font-light leading-relaxed">mundoazulmedioambiente.es</p>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                            <i data-lucide="leaf" class="w-5 h-5 text-gray-400 group-hover:text-yellow-400"></i>
+                        </div>
+                        <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Mundo Azul</h3>
+                    <p class="text-xs text-gray-500 font-mono tracking-wider">mundoazulmedioambiente.es</p>
+                </div>
             </a>
 
             <!-- Proyecto 7 -->
-            <a href="https://www.triplenuevesports.com/" target="_blank" class="glass-card p-8 rounded-2xl group">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
-                        <i data-lucide="trophy" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+            <a href="https://www.triplenuevesports.com/" target="_blank"
+                class="glass-card rounded-2xl group overflow-hidden flex flex-col">
+                <div class="relative h-48 overflow-hidden bg-white/5">
+                    <img src="https://api.microlink.io?url=https://www.triplenuevesports.com/&screenshot=true&embed=screenshot.url"
+                        alt="Triple Nueve Sports"
+                        class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#030305] via-transparent to-transparent opacity-80">
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Triple Nueve Sports</h3>
-                <p class="text-sm text-gray-500 font-light leading-relaxed">triplenuevesports.com</p>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                            <i data-lucide="trophy" class="w-5 h-5 text-gray-400 group-hover:text-yellow-400"></i>
+                        </div>
+                        <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Triple Nueve Sports</h3>
+                    <p class="text-xs text-gray-500 font-mono tracking-wider">triplenuevesports.com</p>
+                </div>
             </a>
 
             <!-- Proyecto 8 -->
-            <a href="https://el24cafebar.es/" target="_blank" class="glass-card p-8 rounded-2xl group">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
-                        <i data-lucide="coffee" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+            <a href="https://el24cafebar.es/" target="_blank"
+                class="glass-card rounded-2xl group overflow-hidden flex flex-col">
+                <div class="relative h-48 overflow-hidden bg-white/5">
+                    <img src="https://api.microlink.io?url=https://el24cafebar.es/&screenshot=true&embed=screenshot.url"
+                        alt="El 24 Café Bar"
+                        class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#030305] via-transparent to-transparent opacity-80">
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-2">El 24 Café Bar</h3>
-                <p class="text-sm text-gray-500 font-light leading-relaxed">el24cafebar.es</p>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                            <i data-lucide="coffee" class="w-5 h-5 text-gray-400 group-hover:text-yellow-400"></i>
+                        </div>
+                        <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">El 24 Café Bar</h3>
+                    <p class="text-xs text-gray-500 font-mono tracking-wider">el24cafebar.es</p>
+                </div>
             </a>
 
             <!-- Proyecto 9 -->
-            <a href="https://www.eurosalmon.es/" target="_blank" class="glass-card p-8 rounded-2xl group">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
-                        <i data-lucide="shopping-cart" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+            <a href="https://www.eurosalmon.es/" target="_blank"
+                class="glass-card rounded-2xl group overflow-hidden flex flex-col">
+                <div class="relative h-48 overflow-hidden bg-white/5">
+                    <img src="https://api.microlink.io?url=https://www.eurosalmon.es/&screenshot=true&embed=screenshot.url"
+                        alt="Eurosalmón"
+                        class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#030305] via-transparent to-transparent opacity-80">
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Eurosalmón</h3>
-                <p class="text-sm text-gray-500 font-light leading-relaxed">eurosalmon.es</p>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                            <i data-lucide="shopping-cart"
+                                class="w-5 h-5 text-gray-400 group-hover:text-yellow-400"></i>
+                        </div>
+                        <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Eurosalmón</h3>
+                    <p class="text-xs text-gray-500 font-mono tracking-wider">eurosalmon.es</p>
+                </div>
             </a>
 
             <!-- Proyecto 10 -->
-            <a href="https://metalurgicasherrero.es/" target="_blank" class="glass-card p-8 rounded-2xl group">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
-                        <i data-lucide="factory" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+            <a href="https://metalurgicasherrero.es/" target="_blank"
+                class="glass-card rounded-2xl group overflow-hidden flex flex-col">
+                <div class="relative h-48 overflow-hidden bg-white/5">
+                    <img src="https://api.microlink.io?url=https://metalurgicasherrero.es/&screenshot=true&embed=screenshot.url"
+                        alt="Metalúrgicas Herrero"
+                        class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#030305] via-transparent to-transparent opacity-80">
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Metalúrgicas Herrero</h3>
-                <p class="text-sm text-gray-500 font-light leading-relaxed">metalurgicasherrero.es</p>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                            <i data-lucide="factory" class="w-5 h-5 text-gray-400 group-hover:text-yellow-400"></i>
+                        </div>
+                        <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Metalúrgicas Herrero</h3>
+                    <p class="text-xs text-gray-500 font-mono tracking-wider">metalurgicasherrero.es</p>
+                </div>
             </a>
 
             <!-- Proyecto 11 -->
-            <a href="https://teosanz.com/" target="_blank" class="glass-card p-8 rounded-2xl group">
-                <div class="flex justify-between items-start mb-6">
-                    <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
-                        <i data-lucide="briefcase" class="w-6 h-6 text-gray-400 group-hover:text-yellow-400"></i>
+            <a href="https://teosanz.com/" target="_blank"
+                class="glass-card rounded-2xl group overflow-hidden flex flex-col">
+                <div class="relative h-48 overflow-hidden bg-white/5">
+                    <img src="https://api.microlink.io?url=https://teosanz.com/&screenshot=true&embed=screenshot.url"
+                        alt="Teo Sanz"
+                        class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#030305] via-transparent to-transparent opacity-80">
                     </div>
-                    <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-2">Teo Sanz</h3>
-                <p class="text-sm text-gray-500 font-light leading-relaxed">teosanz.com</p>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 bg-white/5 rounded-lg group-hover:bg-yellow-400/10 transition-colors">
+                            <i data-lucide="briefcase" class="w-5 h-5 text-gray-400 group-hover:text-yellow-400"></i>
+                        </div>
+                        <i data-lucide="external-link" class="w-4 h-4 text-gray-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Teo Sanz</h3>
+                    <p class="text-xs text-gray-500 font-mono tracking-wider">teosanz.com</p>
+                </div>
             </a>
         </div>
     </main>
